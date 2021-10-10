@@ -339,31 +339,31 @@ kbd {
 <li>Github: https://github.com/sunyajie0829</li>
 <li>联系方式: 18129523534 / 13632652714(微信同号)</li>
 <li>电子邮箱: sunyajie0829@126.com / 510879777@qq.com</li>
-<li>期望职位: iOS高级开发工程师 / Java开发工程师 / 架构师 / 技术负责人</li>
+<li>期望职位: iOS开发工程师 / Java开发工程师 / 架构师 / 技术负责人</li>
 <li>期望薪资: 25K+</li>
 <li>期望城市: 深圳市</li>
-<li>兴趣爱好: 网络游戏、游泳、唱K</li>
+<li>兴趣爱好: 游戏、音乐、学习</li>
 </ul>
 </blockquote>
 
 <h2 id="toc_1">⼯作经历</h2>
 
-<h5 id="toc_2">深圳维示泰克技术有限公司(2016-7~至今)/ 研发部 / 软件开发工程师</h5>
+<h5 id="toc_2">深圳维示泰克技术有限公司(2016-7~至今)/ 研发部 / 全栈开发工程师</h5>
 
 <blockquote>
 <ul>
 <li>3D打印机APP iOS端的软件开发工作;<br></li>
-<li>打印机分布式云平台的设计和开发工作; </li>
+<li>基于 springcloud 、docker swarm、K8S 的打印机分布式云平台的设计和开发工作; </li>
 <li>3D打印机SDK的封装、发布和维护;<br></li>
 <li>基于物联网的3D打印机APP 2.0版本的开发;<br></li>
 <li>打印机云切片的开发工作;<br></li>
-<li>基于U3D的3D模型构建及数据导出、切片;</li>
+<li>基于U3D的3D模型构建、切片;</li>
 <li>移动端、服务端框架的选型和实现;</li>
 <li>技术文档的编写;</li>
 </ul>
 </blockquote>
 
-<h5 id="toc_3">深圳市知音同创科技有限公司(2015-12~2016-6)/ 研发部 / iOS开发工程师</h5>
+<h5 id="toc_3">深圳市知音同创科技有限公司(2014-12~2016-6)/ 研发部 / iOS开发工程师</h5>
 
 <blockquote>
 <ul>
@@ -378,69 +378,87 @@ kbd {
 
 <h2 id="toc_4">项目介绍</h2>
 
-<h5 id="toc_5">创客帝国分布式云服务系统</h5>
+<h5 id="toc_5">3D模型商城系统</h5>
 
 <blockquote>
-<p>针对创客帝国实现的分布式云服务系统,提供模型共享、模型购买、分成提现等功能,主要产品为用户创作的3D 模型.用户可以购买或打印别人的模型,也可以共享自己的作品到打印工坊中,如果作品被别人打印,作者可以进行分成.本项目采用springboot进行开发,后逐步迁移为以SpringCloud、SpringCloud Alibaba 为基础的微服务架构,以mysql、mongodb、redis进行持久化/缓存，集成了rabbitmq、ELK 等.分为管理员服务、用户服务、搜索服务、推送服务、2D 图片转 3D 人像服务、监控服务、 iot 服务等多个服务模块,采用 nacos 作为服务注册中心、配置中心,openfeign 进行微服务之间的调用,gateway 作为微服务网关,nginx 进行反向代理,分发请求到各网关.采用了docker进行容器化部署,nginx做负载均衡,ELK 用来做日志收集/接口访问分析/接口响应速度分析/其他业务分析,rabbitmq 进行消息的传递。包含了微信支付、支付宝支付等支付通道。独立负责订单系统的开发、部署、维护等工作。</p>
+<p>针对各种3D打印机提供的一套模型商城系统，主要以3D模型、会员服务做为商品，提供模型购买、一键式切片/打印的服务。包含了用户模块、管理模块、统一认证中心、网关、搜索等。搜索功能采用ES进行商品搜索、属性聚合。该项目采用Springboot开发，集成了SpringCloud及SpringCloud Alibaba相关的nacos、openfeign、gateway等服务，使用了缓存、主从复制、读写分离等增加系统的并发能力，业务服务拆分为不同的微服务进行部署，基于docker swarm搭建服务器集群，进行服务的集中管理和弹性伸缩。分别采用开发环境、测试环境、生产环境进行开发和发布，保证了环境的隔离。采用github actions进行全自动化部署，主要负责管理模块、认证中心模块、搜索模块、用户模块中商品相关服务的开发、维护、部署等工作。</p>
 </blockquote>
 
-<h5 id="toc_6">创客帝国</h5>
+<h5 id="toc_6">M3App分布式服务系统</h5>
+
+<blockquote>
+<p>针对M3App的后端服务系统，包含用户管理、短信、通知、关卡信息管理、签到管理、奖励系统、勋章系统、模型打印管理、云端控制打印机等多项功能。该项目采用Springboot开发，集成了SpringCloud及SpringCloud Alibaba相关的nacos、openfeign、gateway等服务。使用了缓存、主从复制、读写分离等增加系统的并发能力，采用自建物联网服务进行3D打印机的远程控制，业务服务拆分为不同的微服务进行部署。此项目采用github actions进行全自动化部署，仅需推送代码到github，即可触发构建、docker镜像推送、镜像拉取、自动部署到docker swarm集群、结果通知（采用webhook）的流程，大大减少了重复的工作和出错的可能。独立负责该系统的开发、部署、维护等工作。</p>
+</blockquote>
+
+<h5 id="toc_7">M3App</h5>
+
+<blockquote>
+<p>搭配M3物联网3D打印机编写的配套App。此项目基于Unity平台进行开发，包含了用户登录注册（包含微信、QQ、Apple多途径登录）、模型拼图、控制3D机打印模型、签到、勋章、语音控制打印机等丰富功能。在此项目中，主要负责Unity与原生层的交互SDK编写，包括但不限于Apple登录、打印机配网、Unity导出iOS项目真机调试、iOS版本发布等工作。</p>
+</blockquote>
+
+<h5 id="toc_8">创客帝国分布式云服务系统</h5>
+
+<blockquote>
+<p>针对创客帝国实现的分布式云服务系统,提供模型共享、模型购买、分成提现等功能,主要产品为用户创作的3D 模型.用户可以购买或打印别人的模型,也可以共享自己的作品到打印工坊中,如果作品被别人打印,作者可以进行分成.本项目采用Springboot进行开发,后逐步迁移为以SpringCloud、SpringCloud Alibaba 为基础的微服务架构,以mysql、mongodb、redis进行持久化/缓存，集成了rabbitmq、ELK 等.分为管理员服务、用户服务、搜索服务、推送服务、2D 图片转 3D 人像服务、监控服务、 iot 服务等。包含了微信支付、支付宝支付等支付通道。独立负责订单系统的开发、部署、维护等工作。</p>
+</blockquote>
+
+<h5 id="toc_9">创客帝国</h5>
 
 <blockquote>
 <p>基于培养儿童创造性思维的3D建模工具App。此项目基于Unity平台进行开发，包含了3D模型创建、班级管理、模型导出、模型商城、订单系统、微信支付、支付宝支付、控制3D机打印模型等丰富功能。在此项目中，主要负责使用C#进行Unity场景模型与STL文件的算法转换、STL生成，以及微信/支付宝SDK封装、Jenkins持续性集成、Mac/win/iOS版本发布等工作。</p>
 </blockquote>
 
-<h5 id="toc_7">FollowMe</h5>
+<h5 id="toc_10">FollowMe</h5>
 
 <blockquote>
 <p>基于实时跟随的导航类App,包含路径记录、路径分享、路径跟随、自动导航、IM通讯、地图导航、社区交流、消息推送、语音合成等功能。与后台同事共同负责数据库的表设计,接口设计,加密协议设计等工作;独立负责App的架构设计、代码编写、屏幕适配、性能优化、版本迭代等任务。该项目采用MVVM的设计模式，使用ReactiveObjc进行数据界面绑定，使用instruments、MLeaksFinder对内存、性能进行辅助调优。整体逻辑清晰、代码耦合性低,方便优化和维护。</p>
 </blockquote>
 
-<h5 id="toc_8">3D打印平台</h5>
+<h5 id="toc_11">3D打印平台</h5>
 
 <blockquote>
 <p>基于3D打印机云管理的服务平台，包含用户注册、打印机绑定、远程操控、云切片等功能。独立负责数据库的表设计、接口设计、加密协议、接口文档等工作。该项目采用SpringBoot进行开发,接口符合RESTFUL的设计风格,采用WebSocket实现打印机的远程操控。同时集成了由C++编写的动态链接库实现Linux和Windows平台的在线切片功能。</p>
 </blockquote>
 
-<h5 id="toc_9">MiniToy 2.0</h5>
+<h5 id="toc_12">MiniToy 2.0</h5>
 
 <blockquote>
 <p>基于物联网的3D打印机操控App，包含3D文件STL的显示（已在简书上开源部分代码）、3D模型切片（目前唯一可在手机端切片的App）、WebSocket通讯、视频直播、语音控制、网络发现、Socket数据传输等功能。联网情况(STA模式)下可进行远程操控，离线情况下，可配置打印机为AP模式，App可通过UDP发送广播查找打印机，通过TCP与打印机进行通讯，实现离线操作。后期封装SDK提供给澳大利亚WeMe团队，即国内&quot;创客帝国&quot;App,实现建模、切片、模型打印一体化的功能。独立负责App的架构设计、代码编写、屏幕适配、性能优化、版本迭代等任务。</p>
 </blockquote>
 
-<h5 id="toc_10">MiniToy</h5>
+<h5 id="toc_13">MiniToy</h5>
 
 <blockquote>
 <p>基于局域网内的3D打印机操控App，配合最初版本的MiniToy打印机进行操作，使用Socket进行数据传输。入职负责修改软件Bug、上线、软件优化、版本迭代等工作，入职一个月时间，修改了项目中大多数bug，使得App稳定运行，并成功上架。</p>
 </blockquote>
 
-<h5 id="toc_11">EnergiPlan</h5>
+<h5 id="toc_14">EnergiPlan</h5>
 
 <blockquote>
 <p>基于为电动汽车提供充电功能的App，单独在挪威上架。包含了充电桩查找、地图定位、导航、挪威NetsPay支付、订单管理、银行卡绑卡、二维码扫描、极光推送、阿里短信验证、多语言支持等功能。主要负责功能的二次开发、代码编写、屏幕适配、版本迭代、App上架、Jenkins持续性集成等任务，定时/按需自动打包上传项目到蒲公英，完成自动化部署。</p>
 </blockquote>
 
-<h5 id="toc_12">GET Electric</h5>
+<h5 id="toc_15">GET Electric</h5>
 
 <blockquote>
 <p>基于为电动汽车提供充电功能的App，单独在澳洲上架。与挪威项目类似，单独采用了澳洲的Payway支付，集成了会员系统功能。主要负责功能的二次开发、代码编写、屏幕适配、版本迭代、App上架、Jenkins持续性集成等任务。</p>
 </blockquote>
 
-<h5 id="toc_13">蓝牙牙刷</h5>
+<h5 id="toc_16">蓝牙牙刷</h5>
 
 <blockquote>
 <p>专为儿童设计的智能蓝牙牙刷，包含陀螺仪数据分析、蓝牙数据传输、根据波形进行音频生成、音频分享等功能。独立负责软件架构设计、代码编写、性能优化、版本更新等工作。该项目为智能家居类项目，牙刷内集成6轴陀螺仪，在儿童刷牙的同时，陀螺仪经蓝牙把震动波形传输给App，App根据震动频率和幅度的大小，由预制的音调拼接，最后采用AVFoundation生成并导出音频文件，可进行重复播放，以此调动儿童刷牙的兴趣。</p>
 </blockquote>
 
-<h5 id="toc_14">密码安全箱</h5>
+<h5 id="toc_17">密码安全箱</h5>
 
 <blockquote>
 <p>基于密码保管的App,包含密码生成、指纹验证、数据存储、自定义键盘、防快照泄密等功能。独立负责App的架构设计、代码编写、屏幕适配、性能优化、版本迭代等任务。</p>
 </blockquote>
 
-<h2 id="toc_15">开源项目</h2>
+<h2 id="toc_18">开源项目</h2>
 
-<h5 id="toc_16">FelixUIKit</h5>
+<h5 id="toc_19">FelixUIKit</h5>
 
 <blockquote>
 <p>地址:<br>
@@ -457,7 +475,7 @@ pod &#39;FelixUIKit&#39;
 </code></p>
 </blockquote>
 
-<h5 id="toc_17">FelixUIKit</h5>
+<h5 id="toc_20">FelixUIKit</h5>
 
 <blockquote>
 <p>地址:<br>
@@ -474,7 +492,7 @@ pod &#39;FelixNetKit&#39;
 </code></p>
 </blockquote>
 
-<h2 id="toc_18">技术文章</h2>
+<h2 id="toc_21">技术文章</h2>
 
 <p><a href="https://www.jianshu.com/p/14294bb7ac3a">iOS函数式编程和链式编程的实现</a>.<br>
 <a href="https://www.jianshu.com/p/cff5052c74f5">iOS数据库之Realm实战</a>.<br>
@@ -483,7 +501,7 @@ pod &#39;FelixNetKit&#39;
 <a href="https://www.jianshu.com/p/1c31c8f4171b">MySQL集群和高并发---读写分离</a>.<br>
 <a href="https://www.jianshu.com/u/0e5883241140">其他文章...</a></p>
 
-<h2 id="toc_19">技能清单</h2>
+<h2 id="toc_22">技能清单</h2>
 
 <blockquote>
 <ul>
@@ -496,6 +514,7 @@ pod &#39;FelixNetKit&#39;
 <li>后端框架:<code>SpringMVC/Spring Boot/RabbitMQ/Mybatis/SpringCloud/SpringCloud Alibaba/Gateway/</code>
         <code>Openfeign/Nacos/Sentinel/Seata</code></li>
 <li>前端框架:<code>Bootstrap/Vue.js/UniApp/JQuery</code></li>
+<li>DevOps: <code>K8S(CI/CD)//docker/docker-compose/jenkins(CI/CD)</code></li>
 <li>数据库相关:<code>MySQL/SQLite/MogoDB/Redis</code></li>
 <li>依赖关系:<code>CocoaPods/Maven</code></li>
 <li>版本管理:<code>Svn/Git</code></li>
@@ -503,12 +522,16 @@ pod &#39;FelixNetKit&#39;
 </ul>
 </blockquote>
 
-<h2 id="toc_20">⾃我评价</h2>
+<h2 id="toc_23">⾃我评价</h2>
 
 <p><font color=808080>
-熟练掌握Objective-C、Swift开发，熟练使用常用UI组件、网络框架及各种分析工具，具备SDK开发经验，熟悉Cocoa Touch、Core Data、Runtime、多线程、内存管理、消息传递等机制，熟悉常用算法和数据结构以及各种网络编程Http/Socket/BlueTooth，熟练使用Json/Xml进行数据交互。
-熟练掌握后端开发，熟练使用SpringBoot、SpringCloud、SpringCloud Alibaba、Mybatis、Hibernate、RabbitMQ、Nginx、Tomcat、MySQL、MongoDB、Redis、ELK等第三方框架，能很好的协调前端和后台接口、数据对接等工作。
-熟悉逆向开发，熟练使用IDA、Hopper、Reveal、Theos等进行界面分析、网络分析、逻辑分析等，能熟练分析第三方应用并对其内部逻辑进行修改。对于软件安全、通讯安全等有较好的把控。
+熟练掌握Objective-C、Swift开发，熟练使用常用UI组件、网络框架及各种分析工具，具备SDK开发经验，熟悉Cocoa Touch、Core Data、Runtime、多线程、内存管理、消息传递等机制，熟悉常用算法和数据结构以及各种网络编程Http/Socket/BlueTooth，熟练使用Json/Xml进行数据交互。 </p>
+
+<p>熟练掌握后端开发，熟练使用SpringBoot、SpringCloud、SpringCloud Alibaba、Mybatis、Hibernate、RocketMQ、RabbitMQ、Nginx、Tomcat、MySQL、MongoDB、Redis、ELK等第三方框架，具备良好的架构能力，能很好的协调前端和后台接口、数据对接等工作。</p>
+
+<p>熟练掌握 DevOps 相关实践与技术,熟练使用Docker swarm、 K8S 进行服务的弹性扩缩容器,以及持续性集成和持续性部署工作.</p>
+
+<p>熟悉逆向开发，熟练使用IDA、Hopper、Reveal、Theos等进行界面分析、网络分析、逻辑分析等，能熟练分析第三方应用并对其内部逻辑进行修改。对于软件安全、通讯安全等有较好的把控。
 </font></p>
 
 
